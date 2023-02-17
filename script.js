@@ -524,10 +524,17 @@ let order;
 //выполнение начальной инициализации таблицы и сопутсвующих элементов
 setPages();
 fillTableByPages(1);
-
+addFormSubmitEventListener();
 addSortByColumnEventListener();
 addHideColumnEventListener();
 
+function addFormSubmitEventListener(){
+    editForm.addEventListener('submit', (()=>{
+        saveChanges();
+        editForm.reset();
+    }));
+
+}
 
 function setPages() {
     //инициализация блока с постраничной навигацией
