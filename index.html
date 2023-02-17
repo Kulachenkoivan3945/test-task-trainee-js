@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>test js</title>
+</head>
+
+<body>
+    <main>
+
+        <div class="sort-mode-container">
+            <p>Сортировать по строки по всей таблице</p>
+                <input type="checkbox" id="checkbox_sort_mode" checked>
+        </div>
+
+        <div id="column-hide-container">
+            <p>Скрыть колонки:</p>
+            <label>Имя
+                <input type="checkbox">
+            </label>
+
+            <label>Фамилия
+                <input type="checkbox">
+            </label>
+
+            <label>Описание
+                <input type="checkbox">
+            </label>
+            <label>Цвет глаз
+                <input type="checkbox">
+            </label>
+        </div>
+
+        <table>
+            <thead>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Описание</th>
+                <th>Цвет глаз</th>
+            </thead>
+
+            <tbody id="tbody"></tbody>
+        </table>
+        <div class="page-mode-container">
+
+            <div class="page-container" id="page_container">
+
+            </div>
+
+            <div class="checkbox-view-mode-container">
+                <p>Отображать по страницам</p>
+                <input id="checkbox_view_mode" type="checkbox" onchange="changeTableViewMode()" checked>
+            </div>
+
+        </div>
+        <div class="edit-container">
+            <form class="edit-form" id="editForm" onsubmit="return false">
+
+                <label for="firstName">Имя</label>
+                <input type="text" name="firstName" id="firstName">
+
+                <label for="lastName">Фамилия</label>
+                <input type="text" name="lastName" id="lastName">
+
+                <label for="about">Описание</label>
+                <textarea name="about" id="about" cols="30" rows="10"></textarea>
+
+                <label for="eyeColor">Цвет глаз</label>
+                <input type="text" name="eyeColor" id="eyeColor">
+
+                <button class="cancel-btn" type="reset">Отменить</button>
+                <button class="save-btn" type="submit" onclick="saveChanges()">Сохранить</button>
+            </form>
+        </div>
+
+    </main>
+</body>
+
+</html>
