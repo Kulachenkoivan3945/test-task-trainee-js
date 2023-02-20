@@ -531,7 +531,6 @@ addHideColumnEventListener();
 function addFormSubmitEventListener(){
     editForm.addEventListener('submit', (()=>{
         saveChanges();
-        editForm.reset();
     }));
 
 }
